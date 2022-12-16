@@ -1,10 +1,18 @@
+import {memo} from 'react'
+import {useNavigate,useRoutes} from 'react-router-dom'
+import {routes} from './router'
+import Header from "@/components/header/header";
+import Footer from "@/components/footer/footer";
 
-function App() {
+
+const App = memo(() => {
   return (
     <div className="App">
-      App
+      <Header/>
+        {useRoutes(routes)}
+      <Footer/>
     </div>
   );
-}
+})
 
 export default App;
