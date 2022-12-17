@@ -12,8 +12,6 @@ import {baseTheme} from "@/assets/theme";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    {/*使用router*/}
     <HashRouter>
       {/*未加载出来展示的内容*/}
       <React.Suspense fallback={<h1>Loading...</h1>}>
@@ -26,5 +24,4 @@ root.render(
         </Provider>
       </React.Suspense>
     </HashRouter>
-  </React.StrictMode>
 );

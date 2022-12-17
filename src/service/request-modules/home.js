@@ -1,8 +1,8 @@
 import request from "@/service/request";
 
-export const getHighScore = () => {
+export const getGoodPrice = () => {
   return request.get({
-    url: '/home/highscore'
+    url: '/home/goodprice'
   })
 }
 

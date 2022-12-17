@@ -1,21 +1,23 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit'
-import {getHighScore} from "@/service";
+import {getGoodPrice} from "@/service";
 
 //异步请求action
-export const highScoreAction = createAsyncThunk('highScoreAction', async (val, {dispatch, getState}) => {
-  const res = await getHighScore()
+export const GoodPriceAction = createAsyncThunk('goodPrice', async (val, {dispatch, getState}) => {
+  const res = await getGoodPrice()
   return {...res}
 })
 
 const homeSlice = createSlice({
   name: 'home',
-  initialState: {},
+  initialState: {
+    goodPrice:{}
+  },
   reducers: {
   },
   //监听异步action
   extraReducers: {
-    [highScoreAction.fulfilled](state, action) {
-      console.log(action.payload)
+    [GoodPriceAction.fulfilled](state, action) {
+      state.goodPrice = action.payload
     }
   }
 })
