@@ -32,6 +32,8 @@ module.exports = {
   webpack:{
     alias:{
       "@": path.resolve(__dirname,"src"),
+      //mui搭配style-component配置
+      '@mui/styled-engine': '@mui/styled-engine-sc'
     }
   }
 };

@@ -3,7 +3,8 @@ import {GoodPriceAction} from "@/store/home-slice";
 import {useDispatch, useSelector, shallowEqual} from 'react-redux'
 import {HomeWrapper} from "@/views/home/style";
 import CommonTitle from "@/components/common-title/common-title";
-import InfoItem from "@/components/info-item/info-item";
+import InfoBox from "@/components/info-box/info-box";
+import IconArrowRight from "@/assets/svg/icon-arrow-right";
 
 const Home = memo(() => {
   const dispatch = useDispatch()
@@ -23,15 +24,14 @@ const Home = memo(() => {
 
       <div className='home-body'>
 
-
         <div className='home-box'>
-          <CommonTitle title={goodPrice.title} tip={goodPrice.title}/>
-          <div className='list'>
-            {
-              goodPrice.list?.slice(0, 8).map(item => <InfoItem key={item.id} info={item}/>)
-            }
+          <CommonTitle title={goodPrice.title}/>
+          {/*展示房间的列表们*/}
+          <InfoBox list={goodPrice.list} />
+          <div className='show-more'>
+            <span className='more-tip'>显示全部</span>
+            <IconArrowRight />
           </div>
-          <div className='show-more'>展示更多</div>
         </div>
       </div>
     </HomeWrapper>
