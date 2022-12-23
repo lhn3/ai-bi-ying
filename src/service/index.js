@@ -1,4 +1,5 @@
 export {
   getGoodPrice,
-  getHighScore
+  getHighScore,
+  getHotArea
 } from './request-modules/home'

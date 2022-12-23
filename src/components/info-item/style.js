@@ -4,13 +4,40 @@ export const InfoItemWrapper = styled.div`
   cursor: pointer;
   box-sizing: border-box;
   width: ${props => props.width};
-  height: 300px;
   padding: 8px 8px 12px;
   line-height: 26px;
-  .info-img{
-    width: 100%;
-    height: 164px;
-    border-radius: 4px;
+  .cover {
+    position: relative;
+    box-sizing: border-box;
+    padding: 66.66% 8px 0;
+    border-radius: 3px;
+    overflow: hidden;
+
+    //.ant-carousel {
+    //  position: absolute;
+    //  left: 0;
+    //  top: 0;
+    //  width: 100%;
+    //  height: 100%;
+    //}
+    //
+    //.item {
+    //  height: 100%;
+    //
+    //  img {
+    //    width: 100%;
+    //    height: 100%;
+    //  }
+    //}
+
+    > img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
   .info-tip{
     font-weight: bold;

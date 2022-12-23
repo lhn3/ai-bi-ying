@@ -8,12 +8,18 @@ const InfoBox = memo((props) => {
     <InfoBoxWrapper>
       {/*每个房间的item*/}
       {
-        props.list?.slice(0, 8).map(item => <InfoItem key={item.id} info={item} width='25%'/>)
+        props.list?.slice(0, props.num * 2).map(item => <InfoItem key={item.id} info={item}
+                                                                  width={`${100 / props.num}%`}/>)
       }
     </InfoBoxWrapper>
   );
 })
 InfoItem.propTypes = {
-  list: PropTypes.arrary
+  num: PropTypes.number,
+  list: PropTypes.array
+}
+InfoItem.defaultProps = {
+  num: 1,
+  list: []
 }
 export default InfoBox;

@@ -6,7 +6,7 @@ export const CommonTitleWrapper = styled.div`
   min-width: 1px;
   width: max-content;
   .title {
-    cursor: pointer;
+    cursor: ${props => props.showMore ? 'pointer' : 'unset'};
     padding: 0 20px 0 0;
     .title1 {
       font-size: 22px;
@@ -18,7 +18,7 @@ export const CommonTitleWrapper = styled.div`
     }
   }
   .icon {
-    cursor: pointer;
+    cursor: ${props => props.showMore ? 'pointer' : 'unset'};
     opacity: 0;
     transition: opacity 0.3s;
   }

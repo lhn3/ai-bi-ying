@@ -6,7 +6,9 @@ import {Rate} from 'antd';
 const InfoItem = memo(props => {
   return (
     <InfoItemWrapper width={props.width}>
-      <img className='info-img' src={props.info.picture_url} alt={props.info.name}/>
+      <div className='cover'>
+        <img src={props.info.picture_url} alt={props.info.name}/>
+      </div>
       <div className='info-tip'
            style={{color: props.info.verify_info.text_color}}>{props.info.verify_info.messages[0]} · {props.info.verify_info.messages[1]}</div>
       <div className='info-title text-ellipsis'>{props.info.name}</div>
@@ -30,6 +32,10 @@ const InfoItem = memo(props => {
 InfoItem.propTypes = {
   info: PropTypes.object,
   width: PropTypes.string
+}
+InfoItem.defaultProps = {
+  info: {},
+  width: '100%'
 }
 
 export default InfoItem;

@@ -14,4 +14,11 @@ export const getHighScore = () => {
   })
 }
 
+//获取热门目的地
+export const getHotArea = () => {
+  return request.get({
+    url: '/home/discount'
+  })
+}
+
 
