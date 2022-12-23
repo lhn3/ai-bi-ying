@@ -1,3 +1,4 @@
 export {
-  getGoodPrice
+  getGoodPrice,
+  getHighScore
 } from './request-modules/home'

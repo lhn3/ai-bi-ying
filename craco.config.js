@@ -22,18 +22,22 @@ module.exports = {
         lessLoaderOptions: {
           lessOptions: {
             //修改主题色
-            modifyVars: { '@primary-color': '#1DA57A' },
+            modifyVars: {'@primary-color': '#1DA57A'},
             javascriptEnabled: true,
           },
         },
       },
     },
   ],
-  webpack:{
-    alias:{
-      "@": path.resolve(__dirname,"src"),
-      //mui搭配style-component配置
-      '@mui/styled-engine': '@mui/styled-engine-sc'
+  webpack: {
+    alias: {
+      "@": path.resolve(__dirname, "src")
+    },
+    //mui搭配style-component配置
+    resolve: {
+      alias: {
+        '@mui/styled-engine': '@mui/styled-engine-sc'
+      },
     }
-  }
+  },
 };

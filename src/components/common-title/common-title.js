@@ -1,6 +1,7 @@
 import {memo} from 'react'
 import PropTypes from "prop-types"
 import {CommonTitleWrapper} from "./style";
+import IconArrowRight from "@/assets/svg/icon-arrow-right";
 
 const CommonTitle = memo(props => {
   return (
@@ -10,6 +11,9 @@ const CommonTitle = memo(props => {
         {
           props.tip ? <div className='title2'>{props.tip}</div> : null
         }
+      </div>
+      <div className='icon'>
+        <IconArrowRight/>
       </div>
     </CommonTitleWrapper>
   );
