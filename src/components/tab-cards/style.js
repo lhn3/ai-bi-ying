@@ -8,6 +8,7 @@ export const TabCardsWrapper = styled.div`
   padding: 16px 8px;
   margin: 0px -8px;
   .icon {
+    cursor: pointer;
     position: absolute;
     height: 28px;
     width: 28px;

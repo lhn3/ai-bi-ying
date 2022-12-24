@@ -10,10 +10,10 @@ export const HomeWrapper = styled.div`
   .home-body{
     box-sizing: border-box;
     margin: auto;
-    border-left: 1px solid #a0d911;
-    border-right: 1px solid #a0d911;
+    //border-left: 1px solid #a0d911;
+    //border-right: 1px solid #a0d911;
     width: 1080px;
-    
+    padding-bottom: 40px;
     .home-box{
       padding-top: 30px;
     }

@@ -1,5 +1,6 @@
 export {
   getGoodPrice,
   getHighScore,
-  getHotArea
+  getHotArea,
+  getRecommend
 } from './request-modules/home'

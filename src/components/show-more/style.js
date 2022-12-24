@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const ShowMoreWrapper = styled.div`
+  color: ${props => props.ifColor ? props.theme.currentColor : '#000'};
   display: flex;
   align-items: center;
   cursor: pointer;
