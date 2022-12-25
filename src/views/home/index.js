@@ -13,11 +13,12 @@ const Home = memo(() => {
 
   const dispatch = useDispatch()
   //获取store数据
-  const {goodPrice, highScore, hotArea, recommend} = useSelector((state) => ({
+  const {goodPrice, highScore, hotArea, recommend,longFor} = useSelector((state) => ({
     goodPrice: state.home.goodPrice,
     highScore: state.home.highScore,
     hotArea: state.home.hotArea,
-    recommend: state.home.recommend
+    recommend: state.home.recommend,
+    longFor: state.home.longFor
   }), shallowEqual)
 
   useEffect(() => {
@@ -64,15 +65,19 @@ const Home = memo(() => {
 
         {/*推荐目的地*/}
         <div className='home-box'>
-          {/*标题*/}
           <CommonTitle title={recommend.title}/>
-          {/*tab切换*/}
           <TabCards tabList={recommend.dest_address?.map(item => item.name)} activeName={recommendActive}
                     changeTab={changeRecommendActive}/>
-          {/*展示房间的列表们*/}
           <InfoBox list={recommend.dest_list?.[recommendActive]} num={3}/>
-          {/*显示全部*/}
           <ShowMore info={recommendActive} />
+        </div>
+
+        {/*你可能也想去*/}
+        <div className='home-box'>
+          <CommonTitle title={longFor.title} tip={longFor.subtitle} />
+          <div style={{margin: '0 -8px'}}>
+            <TabCards photoList={longFor.list}/>
+          </div>
         </div>
 
         {/*佛山高性价比房源*/}

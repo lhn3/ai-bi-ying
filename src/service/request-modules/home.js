@@ -21,10 +21,17 @@ export const getHotArea = () => {
   })
 }
 
-//获取热门目的地
+//获取推荐目的地
 export const getRecommend = () => {
   return request.get({
     url: '/home/hotrecommenddest'
+  })
+}
+
+//获取向往目的地
+export const getLongFor = () => {
+  return request.get({
+    url: '/home/longfor'
   })
 }
 

@@ -9,7 +9,7 @@ const TabCards = memo((props) => {
   const [showLeft, setShowLeft] = useState(false)
   const [showRight, setShowRight] = useState(false)
   const [index, setIndex] = useState(0) //当前在第一个的索引
-  const scrollRef = useRef() //滚动去
+  const scrollRef = useRef() //滚动区
 
   //初始化，如果长度不超出就不显示最右侧按钮
   useEffect(() => {
@@ -44,6 +44,22 @@ const TabCards = memo((props) => {
                           onClick={() => props.changeTab(item)}>{item}</div>
             })
           }
+          {
+            props.photoList.map(item => {
+              return (
+                <div key={item.city} className='photo-tab'>
+                  <div className='inner'>
+                    <img src={item.picture_url} alt='' />
+                    <div className='bg-cover' />
+                    <div className='photo-info'>
+                      <div className='photo-title'>{item.city}</div>
+                      <div className='photo-price'>{item.price}</div>
+                    </div>
+                  </div>
+                </div>
+              )
+            })
+          }
         </div>
       </div>
     </TabCardsWrapper>
@@ -52,10 +68,12 @@ const TabCards = memo((props) => {
 
 TabCards.propTypes = {
   tabList: PropTypes.array,
+  photoList: PropTypes.array,
   activeName: PropTypes.string,
   changeTab: PropTypes.func
 }
 TabCards.defaultProps = {
-  tabList: []
+  tabList: [],
+  photoList: []
 }
 export default TabCards;

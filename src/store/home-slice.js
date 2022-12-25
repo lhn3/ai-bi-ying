@@ -1,5 +1,5 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit'
-import {getGoodPrice, getHighScore, getHotArea, getRecommend} from "@/service";
+import {getGoodPrice, getHighScore, getHotArea, getRecommend,getLongFor} from "@/service";
 
 //异步请求action
 export const homeAction = createAsyncThunk('home', async (val, {dispatch, getState}) => {
@@ -15,6 +15,9 @@ export const homeAction = createAsyncThunk('home', async (val, {dispatch, getSta
   getRecommend().then(res => {
     dispatch(homeSlice.actions.recommendAction(res))
   })
+  getLongFor().then(res => {
+    dispatch(homeSlice.actions.longForAction(res))
+  })
 })
 
 const homeSlice = createSlice({
@@ -23,7 +26,8 @@ const homeSlice = createSlice({
     goodPrice: {},
     highScore: {},
     hotArea: [],
-    recommend: []
+    recommend: [],
+    longFor: {}
   },
   reducers: {
     goodPriceAction(state, action) {
@@ -37,6 +41,9 @@ const homeSlice = createSlice({
     },
     recommendAction(state, action) {
       state.recommend = action.payload
+    },
+    longForAction(state, action) {
+      state.longFor = action.payload
     }
   }
 })

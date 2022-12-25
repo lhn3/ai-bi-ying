@@ -30,8 +30,9 @@ export const TabCardsWrapper = styled.div`
   .tabs {
     padding: 16px 0;
     overflow-x: hidden;
-    .tab-scroll{
+    .tab-scroll {
       display: flex;
+      white-space: nowrap;
       transition: all 0.4s;
       .word-tab {
         flex-shrink: 0;
@@ -59,6 +60,49 @@ export const TabCardsWrapper = styled.div`
         background: #00848A;
         box-shadow: 0 7px 14px rgba(0, 132, 138, .15);
         border: solid 0.5px #00848A;
+      }
+      
+      
+      .photo-tab {
+        flex-shrink: 0;
+        width: 20%;
+        cursor: pointer;
+        .inner {
+          position: relative;
+          padding: 0 8px;
+          img {
+            width: 100%;
+            border-radius: 4px;
+          }
+          .bg-cover {
+            position: absolute;
+            left: 8px;
+            right: 8px;
+            bottom: 0;
+            height: 60%;
+            border-radius: 4px;
+            background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0) 3%, rgb(0, 0, 0) 100%)
+          }
+          .photo-info {
+            position: absolute;
+            left: 8px;
+            right: 8px;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 24px 32px;
+            color: #fff;
+            font-weight: bold;
+            .photo-title {
+              font-size: 18px;
+            }
+            .photo-price {
+              font-size: 14px;
+            }
+          }
+        }
       }
     }
   }

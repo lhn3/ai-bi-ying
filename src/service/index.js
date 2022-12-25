@@ -2,5 +2,6 @@ export {
   getGoodPrice,
   getHighScore,
   getHotArea,
-  getRecommend
+  getRecommend,
+  getLongFor
 } from './request-modules/home'
