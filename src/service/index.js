@@ -3,5 +3,6 @@ export {
   getHighScore,
   getHotArea,
   getRecommend,
-  getLongFor
+  getLongFor,
+  getPlusData
 } from './request-modules/home'

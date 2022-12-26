@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import IconArrowRight from "@/assets/svg/icon-arrow-right";
 import IconArrowLeft from "@/assets/svg/icon-arrow-left";
 import classNames from "classnames";
+import InfoItem from "@/components/info-item/info-item";
 
 const TabCards = memo((props) => {
   const [showLeft, setShowLeft] = useState(false)
@@ -15,7 +16,7 @@ const TabCards = memo((props) => {
   useEffect(() => {
     let width = scrollRef.current.scrollWidth - scrollRef.current.clientWidth
     if (width > 0) setShowRight(true)
-  }, [props.tabList])
+  }, [props.tabList,props.photoList,props.itemList])
 
   //每次按钮第一个位置的标签为下一个，索引加1/减1
   const handelClick = val => {
@@ -60,6 +61,15 @@ const TabCards = memo((props) => {
               )
             })
           }
+          {
+            props.itemList.map(item => {
+              return (
+                <div className='item-tab' key={item.id}>
+                  <InfoItem info={item} width='100%'/>
+                </div>
+              )
+            })
+          }
         </div>
       </div>
     </TabCardsWrapper>
@@ -67,13 +77,15 @@ const TabCards = memo((props) => {
 })
 
 TabCards.propTypes = {
-  tabList: PropTypes.array,
-  photoList: PropTypes.array,
+  tabList: PropTypes.array, //按钮展示
+  photoList: PropTypes.array, //图片展示
+  itemList: PropTypes.array, //item展示
   activeName: PropTypes.string,
   changeTab: PropTypes.func
 }
 TabCards.defaultProps = {
   tabList: [],
-  photoList: []
+  photoList: [],
+  itemList: []
 }
 export default TabCards;

@@ -13,12 +13,13 @@ const Home = memo(() => {
 
   const dispatch = useDispatch()
   //获取store数据
-  const {goodPrice, highScore, hotArea, recommend,longFor} = useSelector((state) => ({
+  const {goodPrice, highScore, hotArea, recommend,longFor,plusData} = useSelector((state) => ({
     goodPrice: state.home.goodPrice,
     highScore: state.home.highScore,
     hotArea: state.home.hotArea,
     recommend: state.home.recommend,
-    longFor: state.home.longFor
+    longFor: state.home.longFor,
+    plusData: state.home.plusData
   }), shallowEqual)
 
   useEffect(() => {
@@ -92,6 +93,14 @@ const Home = memo(() => {
           <CommonTitle title={highScore.title} tip={highScore.subtitle} showMore={true}/>
           <InfoBox list={highScore.list} num={4}/>
           <ShowMore/>
+        </div>
+
+        {/*plus房源*/}
+        <div className='home-box'>
+          <CommonTitle title={plusData.title} tip={plusData.subtitle} />
+          <div style={{margin: '0 -8px'}}>
+            <TabCards itemList={plusData.list}/>
+          </div>
         </div>
       </div>
     </HomeWrapper>

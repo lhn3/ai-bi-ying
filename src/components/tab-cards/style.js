@@ -34,6 +34,8 @@ export const TabCardsWrapper = styled.div`
       display: flex;
       white-space: nowrap;
       transition: all 0.4s;
+      
+      
       .word-tab {
         flex-shrink: 0;
         flex-basis: 120px; //最小宽度
@@ -103,6 +105,12 @@ export const TabCardsWrapper = styled.div`
             }
           }
         }
+      }
+      
+      
+      .item-tab{
+        flex-shrink: 0;
+        width: 20%;
       }
     }
   }

@@ -35,4 +35,11 @@ export const getLongFor = () => {
   })
 }
 
+//获取plus数据
+export const getPlusData = () => {
+  return request.get({
+    url: '/home/plus'
+  })
+}
+
 
