@@ -28,6 +28,25 @@ export const EntireWrapper = styled.div`
     }
   }
   .entire-body{
-    padding-top: 48px;
+    padding: 48px 20px 30px 20px;
+    margin: 0 8px;
+
+    .entire-tip{
+      display: flex;
+      height: 100px;
+      align-items: center;
+      div{
+        span{
+          font-weight: bold;
+        }
+      }
+    }
+    .entire-title{
+      color: #222222;
+      font-size: 22px;
+      font-weight: bold;
+      padding-bottom: 20px;
+    }
+    
   }
 `

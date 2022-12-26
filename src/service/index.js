@@ -6,3 +6,7 @@ export {
   getLongFor,
   getPlusData
 } from './request-modules/home'
+
+export {
+  getEntireList
+} from './request-modules/entire'
