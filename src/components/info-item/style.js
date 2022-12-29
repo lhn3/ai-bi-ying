@@ -13,23 +13,6 @@ export const InfoItemWrapper = styled.div`
     border-radius: 3px;
     overflow: hidden;
 
-    //.ant-carousel {
-    //  position: absolute;
-    //  left: 0;
-    //  top: 0;
-    //  width: 100%;
-    //  height: 100%;
-    //}
-    //
-    //.item {
-    //  height: 100%;
-    //
-    //  img {
-    //    width: 100%;
-    //    height: 100%;
-    //  }
-    //}
-
     > img {
       position: absolute;
       left: 0;

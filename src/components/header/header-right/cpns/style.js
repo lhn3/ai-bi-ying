@@ -12,6 +12,7 @@ export const AvatarDialogWrapper = styled.div`
   font-size: 14px;
   text-indent: 1em;
   line-height: 42px;
+  z-index: 999;
   .top {
     padding: 10px 0;
     border-bottom: ${props => props.theme.borderPrimary};

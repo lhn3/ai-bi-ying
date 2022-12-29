@@ -1,4 +1,4 @@
-import {memo,useEffect} from 'react'
+import {memo} from 'react'
 import {AvatarDialogWrapper} from './style'
 
 const AvatarDialog = memo(() => {

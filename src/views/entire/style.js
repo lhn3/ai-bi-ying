@@ -2,34 +2,21 @@ import styled from "styled-components";
 
 export const EntireWrapper = styled.div`
   position: relative;
-  .entire-header{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 48px;
-    border-bottom: ${props => props.theme.borderPrimary};
-    display: flex;
-    align-items: center;
-    padding-left: 26px;
-    .item{
-      color: ${props=>props.theme.fontPrimaryColor};
-      height: 32px;
-      line-height: 32px;
-      padding: 0 12px;
-      border: ${props => props.theme.borderPrimary};
-      border-radius: 4px;
-      margin-right: 14px;
-      cursor: pointer;
-    }
-    .active{
-      color: #fff;
-      background: ${props=>props.theme.currentColor};
-      border: 1px solid rgb(0, 132, 137);
-    }
-  }
+  
   .entire-body{
     padding: 48px 20px 30px 20px;
     margin: 0 8px;
+    position: relative;
+    
+    .entire-cover{
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      position: absolute;
+      top:0;
+      left: 0;
+      background-color: rgba(0,0,0,0.3);
+    }
 
     .entire-tip{
       display: flex;
@@ -47,6 +34,48 @@ export const EntireWrapper = styled.div`
       font-weight: bold;
       padding-bottom: 20px;
     }
-    
+    .entire-box{
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -8px;
+    }
+
+    .pagination{
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .num-tip{
+        line-height: 50px;
+        color: ${props => props.theme.fontCurrentColor};
+      }   
+      .message{
+        line-height: 60px;
+        color: #717171;
+      }
+
+      .MuiPaginationItem-icon{
+        font-size: 26px;
+      }
+      .MuiPagination-ul{
+        li{
+          margin: 0 8px;
+        }
+      }
+      .MuiPaginationItem-page:hover{
+        text-decoration: underline;
+      }
+      .Mui-selected {
+        color: #fff;
+        background-color: ${props => props.theme.fontCurrentColor};
+      }
+      .Mui-selected:hover{
+        text-decoration: none;
+        cursor: auto;
+        background-color: ${props => props.theme.fontCurrentColor};
+      }
+    }
   }
 `
