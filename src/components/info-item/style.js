@@ -12,7 +12,6 @@ export const InfoItemWrapper = styled.div`
     padding: 66.66% 8px 0;
     border-radius: 3px;
     overflow: hidden;
-
     > img {
       position: absolute;
       left: 0;
@@ -21,31 +20,95 @@ export const InfoItemWrapper = styled.div`
       height: 100%;
       object-fit: cover;
     }
+    .control-btn {
+      top: 0;
+      position: absolute;
+      color: #fff;
+      width: 50px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    &:hover {
+      .control-btn {
+        opacity: 1;
+      }
+    }
+    .left-btn {
+      left: 0;
+      background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.4), transparent);
+    }
+    .right-btn {
+      right: 0;
+      background-image: linear-gradient(-90deg, rgba(0, 0, 0, 0.4), transparent);
+    }
+    //轮播节点样式
+    .indicator {
+      position: absolute;
+      height: 20px;
+      width: 100%;
+      z-index: 9;
+      left: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .box-item{
+        min-width: 14.3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .box {
+          min-width: 6px;
+          min-height: 6px;
+          background-color: rgba(255, 255, 255, 0.8);
+          border-radius: 3px;
+        }
+        .box:last-child {
+          margin-right: 0;
+        }
+        .active {
+          min-width: 8px;
+          min-height: 8px;
+          border-radius: 4px;
+          background-color: ${props => props.theme.primaryColor};
+        }
+        .dis-active{
+          min-width: 4px;
+          min-height: 4px;
+          border-radius: 2px;
+        }
+      }
+    }
   }
-  .info-tip{
+  .info-tip {
     font-weight: bold;
     font-size: 12px;
   }
-  .info-title{
+  .info-title {
     font-size: 16px;
     font-weight: bold;
-    color: ${props=>props.theme.fontPrimaryColor};
+    color: ${props => props.theme.fontPrimaryColor};
   }
-  .info-price{
+  .info-price {
     font-size: 14px;
-    color: ${props=>props.theme.fontPrimaryColor};
+    color: ${props => props.theme.fontPrimaryColor};
   }
-  .info-star{
+  .info-star {
     display: flex;
     align-items: center;
     line-height: 14px;
-    .ant-rate-star{
+    .ant-rate-star {
       margin-right: 2px;
     }
-    .star-span{
+    .star-span {
       padding-left: 5px;
       font-size: 12px;
-      color: ${props=>props.theme.fontPrimaryColor};
+      color: ${props => props.theme.fontPrimaryColor};
     }
   }
 `
