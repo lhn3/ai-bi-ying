@@ -23,7 +23,8 @@ const entireSlice = createSlice({
     limit: 20,
     total: 0,
     dataList: [],
-    loading: false
+    loading: false,
+    clickItem: {}
   },
   reducers: {
     //获取数据
@@ -41,6 +42,10 @@ const entireSlice = createSlice({
     },
     changeLoading(state, action) {
       state.loading = action.payload
+    },
+    //保存点击的item
+    changeClickItem(state, action) {
+      state.clickItem = action.payload
     },
   }
 })

@@ -2,12 +2,14 @@ import {memo, useEffect} from 'react'
 import {useDispatch, useSelector, shallowEqual} from "react-redux";
 import {EntireWrapper} from "@/views/entire/style";
 import EntireHeader from "./entire-header/entire-header";
-import {entireAction} from '@/store/entire-slice'
+import entireSlice,{entireAction} from '@/store/entire-slice'
 import Pagination from '@mui/material/Pagination';
 import InfoItem from "@/components/info-item/info-item";
+import {useNavigate} from "react-router-dom";
 
 const Entire = memo(() => {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const {page, limit, total, dataList, loading} = useSelector(state => ({
     page: state.entire.page,
@@ -27,6 +29,12 @@ const Entire = memo(() => {
     dispatch(entireAction(p))
   }
 
+  //保存点击的item
+  const saveClickItem = item => {
+    dispatch(entireSlice.actions.changeClickItem(item))
+    navigate(`/detail?id=${item.id}`)
+  }
+
   return (
     <EntireWrapper>
       {/*头部*/}
@@ -44,7 +52,7 @@ const Entire = memo(() => {
         {/*内容*/}
         <div className='entire-box'>
           {
-            dataList.map(item => <InfoItem key={item._id} info={item} width='25%'/>)
+            dataList.map(item => <InfoItem key={item._id} info={item} width='25%' saveClickItem={item => saveClickItem(item)}/>)
           }
         </div>
 

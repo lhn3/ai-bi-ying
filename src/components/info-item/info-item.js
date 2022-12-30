@@ -22,20 +22,21 @@ const InfoItem = memo(props => {
     <InfoItemWrapper width={props.width}>
       <div className='cover'>
         {/*图片*/}
-        <img src={props.info.picture_urls?.[index] || props.info.picture_url} alt={props.info.name}/>
+        <img src={props.info.picture_urls?.[index] || props.info.picture_url} alt={props.info.name}
+             onClick={() => props.saveClickItem ? props.saveClickItem(props.info) : null}/>
 
         {/*左右控件*/}
         {
           props.info.picture_urls?.length ?
-          <div className='control-btn left-btn' onClick={() => handelClick('pre')}>
-            <IconArrowLeft width='24' height='24'/>
-          </div> : null
+            <div className='control-btn left-btn' onClick={() => handelClick('pre')}>
+              <IconArrowLeft width='24' height='24'/>
+            </div> : null
         }
         {
           props.info.picture_urls?.length ?
-          <div className='control-btn right-btn' onClick={() => handelClick('next')}>
-            <IconArrowRight width='24' height='24'/>
-          </div> : null
+            <div className='control-btn right-btn' onClick={() => handelClick('next')}>
+              <IconArrowRight width='24' height='24'/>
+            </div> : null
         }
 
         {/*如果有图片列表就展示轮播节点*/}
@@ -60,9 +61,10 @@ const InfoItem = memo(props => {
             : null
         }
       </div>
-      <div className='info-tip'
+
+      <div className='info-tip' onClick={() => props.saveClickItem ? props.saveClickItem(props.info) : null}
            style={{color: props.info.verify_info.text_color}}>{props.info.verify_info.messages[0]} · {props.info.verify_info.messages[1]}</div>
-      <div className='info-title text-ellipsis'>{props.info.name}</div>
+      <div className='info-title text-ellipsis' onClick={() => props.saveClickItem ? props.saveClickItem(props.info) : null}>{props.info.name}</div>
       <div className='info-price'>{props.info.price_format}/晚</div>
       <div className='info-star'>
         <Rate disabled allowHalf defaultValue={props.info.star_rating ?? 5}
@@ -82,7 +84,8 @@ const InfoItem = memo(props => {
 
 InfoItem.propTypes = {
   info: PropTypes.object,
-  width: PropTypes.string
+  width: PropTypes.string,
+  saveClickItem: PropTypes.func
 }
 InfoItem.defaultProps = {
   info: {},
