@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const EntireWrapper = styled.div`
-  position: relative;
+  //头部80px
+  padding-top: 80px;
   
   .entire-body{
     padding: 48px 20px 30px 20px;

@@ -2,5 +2,5 @@ import styled from 'styled-components'
 
 export const HeaderLeftWrapper = styled.div`
   cursor: pointer;
-  color: ${props => props.theme.primaryColor};
+  color: ${props => props.isTransparent ? '#ffffff' : props.theme.primaryColor};
 `

@@ -6,6 +6,7 @@ import entireSlice, {entireAction} from '@/store/entire-slice'
 import Pagination from '@mui/material/Pagination';
 import InfoItem from "@/components/info-item/info-item";
 import {useNavigate} from "react-router-dom";
+import mainSlice from "@/store/main-slice";
 
 const Entire = memo(() => {
   const dispatch = useDispatch()
@@ -20,6 +21,8 @@ const Entire = memo(() => {
   }), shallowEqual)
 
   useEffect(() => {
+    //头部固定不透明
+    dispatch(mainSlice.actions.headerChange({isFixed: true, isTransparent: false}))
     dispatch(entireAction())
   }, [])
 

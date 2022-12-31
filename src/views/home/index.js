@@ -1,5 +1,6 @@
 import {memo, useEffect, useState, useCallback} from 'react'
 import {homeAction} from "@/store/home-slice";
+import mainSlice from "@/store/main-slice";
 import {useDispatch, useSelector, shallowEqual} from 'react-redux'
 import {HomeWrapper} from "@/views/home/style";
 import CommonTitle from "@/components/common-title/common-title";
@@ -23,12 +24,27 @@ const Home = memo(() => {
   }), shallowEqual)
 
   useEffect(() => {
+    //一开始将头部设置透明
+    dispatch(mainSlice.actions.headerChange({isFixed: true, isTransparent: true}))
+    //页面滚动大于零取消透明
+    let scrollFunc = () => {
+      if(document.documentElement.scrollTop !== 0){
+        dispatch(mainSlice.actions.headerChange({isFixed: true, isTransparent: false}))
+      } else {
+        dispatch(mainSlice.actions.headerChange({isFixed: true, isTransparent: true}))
+      }
+    }
+    document.addEventListener('scroll',scrollFunc)
     /**
      * 获取高性价比房源action
      * 获取高分房源action
      */
     dispatch(homeAction())
 
+    //移除监听
+    return () =>{
+      document.removeEventListener('scroll',scrollFunc)
+    }
   }, [])
 
   //设置初始化值

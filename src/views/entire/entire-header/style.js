@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
 export const EntireHeaderWrapper = styled.div`
-  position: absolute;
-  top: 0;
+  position: fixed;
+  top: 80px;
   width: 100%;
   height: 48px;
   border-bottom: ${props => props.theme.borderPrimary};
   display: flex;
   align-items: center;
   padding-left: 26px;
-  z-index: 9;
+  z-index: 99;
   background-color: #fff;
   .item{
     color: ${props=>props.theme.fontPrimaryColor};

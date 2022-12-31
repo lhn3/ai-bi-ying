@@ -5,7 +5,7 @@ import IconGlobal from '@/assets/svg/icon-global'
 import IconProfileMenu from "@/assets/svg/icon-profile-menu"
 import IconProfileAvatar from "@/assets/svg/icon-profile-avatar"
 
-const HeaderRight = memo(() => {
+const HeaderRight = memo((props) => {
   const [avatarDialog, setAvatarDialog] = useState(false)
 
   //监听点击事件
@@ -24,7 +24,7 @@ const HeaderRight = memo(() => {
     setAvatarDialog(!avatarDialog)
   }
   return (
-    <HeaderRightWrapper avatarDialog={avatarDialog}>
+    <HeaderRightWrapper isTransparent={props.isTransparent} avatarDialog={avatarDialog}>
       <div className='header-right'>
         <span className='btn'>登录</span>
         <span className='btn'>注册</span>
