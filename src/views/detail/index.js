@@ -1,8 +1,8 @@
 import {memo, useState} from 'react'
 import {DetailWrapper} from "./style";
 import {useSearchParams} from "react-router-dom";
-import {useSelector} from "react-redux";
-import ImagePreview from "@/components/img-preview/img-preview";
+import {shallowEqual, useSelector} from "react-redux";
+import ImgPreview from "@/components/img-preview/img-preview";
 
 const Detail = memo(() => {
   const [paramsObj] = useSearchParams()
@@ -12,11 +12,11 @@ const Detail = memo(() => {
   //展示图片预览
   const [dialog, setDialog] = useState()
   //图片预览的初始化index
-  const [currentIndex,setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0)
 
   const {clickItem} = useSelector(state => ({
     clickItem: state.entire.clickItem
-  }))
+  }), shallowEqual)
 
   //点击图片
   const imgClick = ind => {
@@ -50,7 +50,8 @@ const Detail = memo(() => {
       }
 
       {
-        dialog ? <ImagePreview currentIndex={currentIndex} imgList={clickItem.picture_urls || []} close={() => setDialog(false)} /> : null
+        dialog ? <ImgPreview currentIndex={currentIndex} imgList={clickItem.picture_urls || []}
+                             close={() => setDialog(false)}/> : null
       }
     </DetailWrapper>
   );

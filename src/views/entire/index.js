@@ -2,7 +2,7 @@ import {memo, useEffect} from 'react'
 import {useDispatch, useSelector, shallowEqual} from "react-redux";
 import {EntireWrapper} from "@/views/entire/style";
 import EntireHeader from "./entire-header/entire-header";
-import entireSlice,{entireAction} from '@/store/entire-slice'
+import entireSlice, {entireAction} from '@/store/entire-slice'
 import Pagination from '@mui/material/Pagination';
 import InfoItem from "@/components/info-item/info-item";
 import {useNavigate} from "react-router-dom";
@@ -52,7 +52,8 @@ const Entire = memo(() => {
         {/*内容*/}
         <div className='entire-box'>
           {
-            dataList.map(item => <InfoItem key={item._id} info={item} width='25%' saveClickItem={item => saveClickItem(item)}/>)
+            dataList.map(item => <InfoItem key={item._id} info={item} width='25%'
+                                           saveClickItem={item => saveClickItem(item)}/>)
           }
         </div>
 
