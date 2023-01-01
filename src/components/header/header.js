@@ -21,24 +21,25 @@ const Header = memo(() => {
 
   return (
     <HeaderWrapper isFixed={isFixed} isTransparent={isTransparent} isFocus={isFocus}>
+      {/*左边*/}
       <HeaderLeft isTransparent={isTransparent}/>
 
       {/*中间动画区*/}
-      <CSSTransition in={isFocus} timeout={300} unmountOnExit={true} classNames='mySwitch1'>
-        <HeaderCenter2 isTransparent={isTransparent}/>
-      </CSSTransition>
       <CSSTransition in={!isFocus} timeout={300} unmountOnExit={true} classNames='mySwitch2'>
         <HeaderCenter/>
       </CSSTransition>
+      <CSSTransition in={isFocus} timeout={300} unmountOnExit={true} classNames='mySwitch1'>
+        <HeaderCenter2 isTransparent={isTransparent}/>
+      </CSSTransition>
+
+      {/*右边*/}
+      <HeaderRight isTransparent={isTransparent}/>
 
       {/*二层头部内容*/}
       <HeaderCenterSearch isTransparent={isTransparent} isFocus={isFocus} isFixed={isFixed}/>
 
-      <HeaderRight isTransparent={isTransparent}/>
-
       {/*蒙层*/}
-      {(!isTransparent && isFocus) ?
-        <div className='se-cover' onClick={() => dispatch(mainSlice.actions.headerChange({isFocus: false}))}/> : null}
+      {(!isTransparent && isFocus) ? <div className='se-cover' onClick={() => dispatch(mainSlice.actions.headerChange({isFocus: false}))}/> : null}
     </HeaderWrapper>
   );
 })

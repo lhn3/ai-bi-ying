@@ -25,10 +25,10 @@ const Home = memo(() => {
 
   //页面滚动大于零取消透明
   let scrollFunc = () => {
-    if(document.documentElement.scrollTop !== 0){
-      dispatch(mainSlice.actions.headerChange({isFixed: true, isTransparent: false, isFocus: false}))
-    } else {
+    if(window.scrollY === 0){
       dispatch(mainSlice.actions.headerChange({isFixed: true, isTransparent: true, isFocus: true}))
+    } else {
+      dispatch(mainSlice.actions.headerChange({isFixed: true, isTransparent: false, isFocus: false}))
     }
   }
 
@@ -36,7 +36,7 @@ const Home = memo(() => {
     //一开始将头部设置透明
     scrollFunc()
     //页面滚动实时改变头部状态
-    document.addEventListener('scroll',scrollFunc)
+    window.addEventListener('scroll',scrollFunc)
     /**
      * 获取高性价比房源action
      * 获取高分房源action
@@ -44,7 +44,7 @@ const Home = memo(() => {
     dispatch(homeAction())
 
     //移除监听
-    return () => document.removeEventListener('scroll',scrollFunc)
+    return () => window.removeEventListener('scroll',scrollFunc)
   }, [])
 
   //设置初始化值

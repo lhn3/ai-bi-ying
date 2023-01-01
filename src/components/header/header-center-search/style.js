@@ -65,32 +65,31 @@ export const HeaderCenterSearchWrapper = styled.div`
       }
     }
   }
-  
-  .mySwitch3-enter{
+  .mySwitch3-enter {
     opacity: 0;
-    transform: translateY(-100%) scale(0);
+    transform: translateY(-64px) scale(0.352, 0.727);
   }
-  .mySwitch3-enter-active{
+  .mySwitch3-enter-active {
     opacity: 1;
     transform: translateY(0) scale(1);
     transition: all 0.3s;
   }
-  .mySwitch3-enter-done{
+  .mySwitch3-enter-done {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
-  .mySwitch3-exit{
+  .mySwitch3-exit {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
-  .mySwitch3-exit-active{
+  .mySwitch3-exit-active {
     opacity: 0;
-    transform: translateY(-100%) scale(0.5);
+    transform: translateY(-64px) scale(0.352, 0.727);
     transition: all 0.3s;
   }
-  .mySwitch3-exit-done{
+  .mySwitch3-exit-done {
     opacity: 0;
-    transform: translateY(-100%) scale(0.5);
+    transform: translateY(-64px) scale(0.352, 0.727);
   }
-  
+
 `

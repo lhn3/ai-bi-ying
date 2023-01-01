@@ -33,10 +33,10 @@ const Detail = memo(() => {
     //头部初始化
     scrollFunc()
     //页面滚动实时改变头部状态
-    document.addEventListener('scroll',scrollFunc)
+    window.addEventListener('scroll',scrollFunc)
 
     //移除监听
-    return () => document.removeEventListener('scroll',scrollFunc)
+    return () => window.removeEventListener('scroll',scrollFunc)
   },[])
 
   return (
