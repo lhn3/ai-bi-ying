@@ -26,9 +26,17 @@ const Detail = memo(() => {
     setDialog(true)
   }
 
+  //页面滚动函数
+  let scrollFunc = () => dispatch(mainSlice.actions.headerChange({isFixed: false, isTransparent: false, isFocus: false}))
+
   useEffect(()=>{
-    //头部不固定,不透明
-    dispatch(mainSlice.actions.headerChange({isFixed: false, isTransparent: false}))
+    //头部初始化
+    scrollFunc()
+    //页面滚动实时改变头部状态
+    document.addEventListener('scroll',scrollFunc)
+
+    //移除监听
+    return () => document.removeEventListener('scroll',scrollFunc)
   },[])
 
   return (

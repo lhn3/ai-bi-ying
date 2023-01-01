@@ -9,7 +9,7 @@ export const EntireHeaderWrapper = styled.div`
   display: flex;
   align-items: center;
   padding-left: 26px;
-  z-index: 99;
+  z-index: 98;
   background-color: #fff;
   .item{
     color: ${props=>props.theme.fontPrimaryColor};

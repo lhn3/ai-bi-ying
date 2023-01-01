@@ -19,7 +19,7 @@ export const TabCardsWrapper = styled.div`
     justify-content: center;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 99;
+    z-index: 90;
   }
   .left-icon {
     left: -4px;

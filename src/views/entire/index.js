@@ -20,10 +20,19 @@ const Entire = memo(() => {
     loading: state.entire.loading
   }), shallowEqual)
 
+  //页面滚动函数
+  let scrollFunc = () => dispatch(mainSlice.actions.headerChange({isFixed: true, isTransparent: false, isFocus: false}))
+
   useEffect(() => {
-    //头部固定不透明
-    dispatch(mainSlice.actions.headerChange({isFixed: true, isTransparent: false}))
+    //头部初始化
+    scrollFunc()
+    //页面滚动实时改变头部状态
+    document.addEventListener('scroll',scrollFunc)
+
     dispatch(entireAction())
+
+    //移除监听
+    return () => document.removeEventListener('scroll',scrollFunc)
   }, [])
 
   //修改页码
