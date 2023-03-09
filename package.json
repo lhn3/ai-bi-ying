@@ -28,7 +28,8 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "craco eject"
+    "eject": "craco eject",
+    "prettier": "prettier --write ."
   },
   "eslintConfig": {
     "extends": [
@@ -50,6 +51,12 @@
   },
   "devDependencies": {
     "@craco/craco": "^7.0.0-alpha.9",
-    "craco-less": "^2.1.0-alpha.0"
+    "craco-less": "^2.1.0-alpha.0",
+    "eslint": "8.22",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "prettier": "^2.8.4"
   }
 }
