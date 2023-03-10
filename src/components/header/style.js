@@ -9,8 +9,8 @@ export const HeaderWrapper = styled.div`
   box-sizing: border-box;
   padding: 0 24px;
   transition: all 0.3s;
-  background: ${props => props.isTransparent ? 'transparent' : '#ffffff'};
-  position: ${props => props.isFixed ? 'fixed' : null};
+  background: ${(props) => (props.isTransparent ? 'transparent' : '#ffffff')};
+  position: ${(props) => (props.isFixed ? 'fixed' : null)};
   z-index: 99;
   //蒙版
   .se-cover {
@@ -77,5 +77,4 @@ export const HeaderWrapper = styled.div`
     opacity: 0;
     transform: translate(-50%, 64px) scale(2.84, 1.375);
   }
-
 `

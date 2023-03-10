@@ -1,4 +1,4 @@
-import { memo, useEffect } from 'react'
+import React, { memo, useEffect } from 'react'
 import { useLocation, useRoutes } from 'react-router-dom'
 import { routes } from './router'
 import Header from '@/components/header/header'

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const ImgPreviewWrapper = styled.div`
   position: fixed;
@@ -46,7 +46,9 @@ export const ImgPreviewWrapper = styled.div`
     //动画
     .mySwitch-enter {
       opacity: 0;
-      transform: translateX(${props => props.position === 'next' ? '100px' : '-100px'});
+      transform: translateX(
+        ${(props) => (props.position === 'next' ? '100px' : '-100px')}
+      );
     }
     .mySwitch-enter-active {
       opacity: 1;
@@ -95,7 +97,7 @@ export const ImgPreviewWrapper = styled.div`
       }
       .img-item {
         min-width: 110px;
-        height: ${props => props.showList ? '67px' : 0};
+        height: ${(props) => (props.showList ? '67px' : 0)};
         display: flex;
         align-items: center;
         justify-content: center;

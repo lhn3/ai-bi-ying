@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const TabCardsWrapper = styled.div`
   box-sizing: border-box;
@@ -34,8 +34,7 @@ export const TabCardsWrapper = styled.div`
       display: flex;
       white-space: nowrap;
       transition: all 0.4s;
-      
-      
+
       .word-tab {
         flex-shrink: 0;
         flex-basis: 120px; //最小宽度
@@ -45,26 +44,25 @@ export const TabCardsWrapper = styled.div`
         text-align: center;
         padding: 0 16px;
         font-size: 17px;
-        color: ${props => props.theme.fontPrimaryColor};
+        color: ${(props) => props.theme.fontPrimaryColor};
         font-weight: bold;
-        border: solid 0.5px #D8D8D8;
+        border: solid 0.5px #d8d8d8;
         border-radius: 3px;
-        box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
         margin-right: 16px;
         white-space: nowrap;
         transition: box-shadow 0.4s;
         &:hover {
-          box-shadow: 0 3px 6px rgba(0, 0, 0, .15);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
         }
       }
       .active-word-tab {
         color: #fff;
-        background: #00848A;
-        box-shadow: 0 7px 14px rgba(0, 132, 138, .15);
-        border: solid 0.5px #00848A;
+        background: #00848a;
+        box-shadow: 0 7px 14px rgba(0, 132, 138, 0.15);
+        border: solid 0.5px #00848a;
       }
-      
-      
+
       .photo-tab {
         flex-shrink: 0;
         width: 20%;
@@ -83,7 +81,11 @@ export const TabCardsWrapper = styled.div`
             bottom: 0;
             height: 60%;
             border-radius: 4px;
-            background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0) 3%, rgb(0, 0, 0) 100%)
+            background-image: linear-gradient(
+              -180deg,
+              rgba(0, 0, 0, 0) 3%,
+              rgb(0, 0, 0) 100%
+            );
           }
           .photo-info {
             position: absolute;
@@ -106,9 +108,8 @@ export const TabCardsWrapper = styled.div`
           }
         }
       }
-      
-      
-      .item-tab{
+
+      .item-tab {
         flex-shrink: 0;
         width: 20%;
       }

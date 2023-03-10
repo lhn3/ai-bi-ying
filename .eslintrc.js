@@ -15,5 +15,9 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: ['react'],
-  rules: {}
+  rules: {
+    'react/display-name': 'off', //
+    'react/prop-types': 0, // 防止在react组件定义中缺少props验证
+    'require-jsdoc': 'off' // 取消注视规范
+  }
 }

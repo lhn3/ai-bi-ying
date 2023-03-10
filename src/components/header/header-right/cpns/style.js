@@ -15,7 +15,7 @@ export const AvatarDialogWrapper = styled.div`
   z-index: 999;
   .top {
     padding: 10px 0;
-    border-bottom: ${props => props.theme.borderPrimary};
+    border-bottom: ${(props) => props.theme.borderPrimary};
     div:hover {
       cursor: pointer;
       background: #f4f4f4;
@@ -28,5 +28,4 @@ export const AvatarDialogWrapper = styled.div`
       background: #f4f4f4;
     }
   }
-
 `

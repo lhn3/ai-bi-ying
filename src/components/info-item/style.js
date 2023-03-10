@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const InfoItemWrapper = styled.div`
   cursor: pointer;
   box-sizing: border-box;
-  width: ${props => props.width};
+  width: ${(props) => props.width};
   padding: 8px 8px 12px;
   line-height: 26px;
   .cover {
@@ -44,7 +44,11 @@ export const InfoItemWrapper = styled.div`
     }
     .right-btn {
       right: 0;
-      background-image: linear-gradient(-90deg, rgba(0, 0, 0, 0.4), transparent);
+      background-image: linear-gradient(
+        -90deg,
+        rgba(0, 0, 0, 0.4),
+        transparent
+      );
     }
     //轮播节点样式
     .indicator {
@@ -57,7 +61,7 @@ export const InfoItemWrapper = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-      .box-item{
+      .box-item {
         min-width: 14.3px;
         display: flex;
         align-items: center;
@@ -75,9 +79,9 @@ export const InfoItemWrapper = styled.div`
           min-width: 8px;
           min-height: 8px;
           border-radius: 4px;
-          background-color: ${props => props.theme.primaryColor};
+          background-color: ${(props) => props.theme.primaryColor};
         }
-        .dis-active{
+        .dis-active {
           min-width: 4px;
           min-height: 4px;
           border-radius: 2px;
@@ -92,11 +96,11 @@ export const InfoItemWrapper = styled.div`
   .info-title {
     font-size: 16px;
     font-weight: bold;
-    color: ${props => props.theme.fontPrimaryColor};
+    color: ${(props) => props.theme.fontPrimaryColor};
   }
   .info-price {
     font-size: 14px;
-    color: ${props => props.theme.fontPrimaryColor};
+    color: ${(props) => props.theme.fontPrimaryColor};
   }
   .info-star {
     display: flex;
@@ -108,7 +112,7 @@ export const InfoItemWrapper = styled.div`
     .star-span {
       padding-left: 5px;
       font-size: 12px;
-      color: ${props => props.theme.fontPrimaryColor};
+      color: ${(props) => props.theme.fontPrimaryColor};
     }
   }
 `

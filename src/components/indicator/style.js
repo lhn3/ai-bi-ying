@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const IndicatorWrapper = styled.div`
-  width: ${props => props.width};
+  width: ${(props) => props.width};
   overflow: hidden;
-  .indicator-box{
+  .indicator-box {
     position: relative;
     display: flex;
     align-items: center;

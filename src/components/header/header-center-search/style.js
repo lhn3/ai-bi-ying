@@ -1,24 +1,26 @@
 import styled from 'styled-components'
 
 export const HeaderCenterSearchWrapper = styled.div`
-  position: ${props => props.isFixed ? 'fixed' : 'absolute'};
+  position: ${(props) => (props.isFixed ? 'fixed' : 'absolute')};
   left: 0;
   top: 80px;
-  height: ${props => props.isFocus ? '80px' : 0};
+  height: ${(props) => (props.isFocus ? '80px' : 0)};
   width: 100%;
   transition: all 0.3s;
-  background-color: ${props => props.isTransparent ? 'transparent' : '#fff'};
+  background-color: ${(props) =>
+    props.isTransparent ? 'transparent' : '#fff'};
   display: flex;
   justify-content: center;
   z-index: 99;
-  border-bottom: ${props => props.isTransparent ? 'none' : props.theme.borderPrimary};
+  border-bottom: ${(props) =>
+    props.isTransparent ? 'none' : props.theme.borderPrimary};
   .se-main {
     display: flex;
     .se-box {
       background-color: #fff;
       width: 284px;
       height: 66px;
-      border: ${props => props.theme.borderPrimary};
+      border: ${(props) => props.theme.borderPrimary};
       .se-message {
         margin: 14px 0;
         padding: 0 24px;
@@ -33,8 +35,8 @@ export const HeaderCenterSearchWrapper = styled.div`
         }
       }
       .se-border {
-        border-left: ${props => props.theme.borderPrimary};
-        border-right: ${props => props.theme.borderPrimary};
+        border-left: ${(props) => props.theme.borderPrimary};
+        border-right: ${(props) => props.theme.borderPrimary};
       }
     }
     .se-left {
@@ -59,8 +61,8 @@ export const HeaderCenterSearchWrapper = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: ${props => props.theme.primaryColor};
-        color: #FFFFFF;
+        background-color: ${(props) => props.theme.primaryColor};
+        color: #ffffff;
         font-size: 16px;
       }
     }
@@ -91,5 +93,4 @@ export const HeaderCenterSearchWrapper = styled.div`
     opacity: 0;
     transform: translateY(-64px) scale(0.352, 0.727);
   }
-
 `

@@ -7,6 +7,4 @@ export {
   getPlusData
 } from './request-modules/home'
 
-export {
-  getEntireList
-} from './request-modules/entire'
+export { getEntireList } from './request-modules/entire'

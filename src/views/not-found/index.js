@@ -1,11 +1,7 @@
-import {memo} from 'react'
+import React, { memo } from 'react'
 
 const NotFound = memo(() => {
-  return (
-    <div>
-      NotFound
-    </div>
-  );
+  return <div>NotFound</div>
 })
 
-export default NotFound;
+export default NotFound

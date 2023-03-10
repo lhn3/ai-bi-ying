@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const ShowMoreWrapper = styled.div`
   .more {
-    color: ${props => props.ifColor ? props.theme.currentColor : '#000'};
+    color: ${(props) => (props.ifColor ? props.theme.currentColor : '#000')};
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -19,5 +19,4 @@ export const ShowMoreWrapper = styled.div`
       }
     }
   }
-
 `

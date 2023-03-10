@@ -10,9 +10,9 @@
  * 配置路径别名
  * @type {{overrideWebpackConfig: function({context?: *, webpackConfig: *, pluginOptions?: *}): *, pathSep: string}|{overrideWebpackConfig?: function({context?: *, webpackConfig: *, pluginOptions?: *}): *, pathSep?: string}}
  */
-const path = require("path")
+const path = require('path')
 
-const CracoLessPlugin = require('craco-less');
+const CracoLessPlugin = require('craco-less')
 
 module.exports = {
   plugins: [
@@ -21,23 +21,23 @@ module.exports = {
       options: {
         lessLoaderOptions: {
           lessOptions: {
-            //修改主题色
-            modifyVars: {'@primary-color': '#1DA57A'},
-            javascriptEnabled: true,
-          },
-        },
-      },
-    },
+            // 修改主题色
+            modifyVars: { '@primary-color': '#1DA57A' },
+            javascriptEnabled: true
+          }
+        }
+      }
+    }
   ],
   webpack: {
     alias: {
-      "@": path.resolve(__dirname, "src")
+      '@': path.resolve(__dirname, 'src')
     },
-    //mui搭配style-component配置
+    // mui搭配style-component配置
     resolve: {
       alias: {
         '@mui/styled-engine': '@mui/styled-engine-sc'
-      },
+      }
     }
-  },
-};
+  }
+}
